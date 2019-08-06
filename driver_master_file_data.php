@@ -49,8 +49,8 @@ if ($_GET["Command"] == "save_item") {
         
        $result = $conn->query($sql);
 
-    $sql1 = "Insert into driver_master_file(driver_ref,driver_nic,driver_number,driver_name)values 
-                        ('" . $_GET['driver_ref'] . "','" . $_GET['driver_nic'] . "','" . $_GET['driver_number'] . "','" . $_GET['driver_name'] . "')";
+    $sql1 = "Insert into driver_master_file(driver_ref,sdate,driver_name,Diver_Add1,Diver_Add2,Diver_Tel_1,Diver_Tel_2,Driving_License,NIC,uniq)values 
+                        ('" . $_GET['driver_ref'] . "','" . $_GET['sdate'] . "','" . $_GET['driver_name'] . "','" . $_GET['Diver_Address_1'] . "','" . $_GET['Diver_Address_2'] . "','" . $_GET['Diver_Tel_1'] . "','" . $_GET['Diver_Tel_2'] . "','" . $_GET['Driving_License'] . "','" . $_GET['NIC'] . "','" . $_GET['uniq'] . "')";
         $result = $conn->query($sql1);
 //        echo $sql;
 
