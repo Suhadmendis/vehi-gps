@@ -71,11 +71,19 @@ function newent() {
         return;
     }
     
-    document.getElementById('vehicle_ref_Text').value = "";
-    document.getElementById('department_Text').value = "";
-    document.getElementById('vehicle_type_Text').value = "";
-    document.getElementById('fuel_type_Text').value = "";
-    document.getElementById('vehicle_number').value = "";
+    document.getElementById('item_count').value = "";
+    document.getElementById('Vehicle_Ref').value = "";
+    document.getElementById('uniq').value = "";
+    document.getElementById('Vehicle_Number').value = "";
+    document.getElementById('sdate').value = "";
+    document.getElementById('Seats').value = "";
+    document.getElementById('Fuel_Type').value = "";
+    document.getElementById('Year').value = "";
+    document.getElementById('Brand').value = "";
+    document.getElementById('Model').value = "";
+   
+
+
     document.getElementById('msg_box').innerHTML  = "";
     getdt();
 }
@@ -105,7 +113,7 @@ function assign_dt() {
     if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete")
     {
       XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("reference_no");
-      document.getElementById('vehicle_ref_Text').value = XMLAddress1[0].childNodes[0].nodeValue;
+      document.getElementById('Vehicle_Ref').value = XMLAddress1[0].childNodes[0].nodeValue;
     
       XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("uniq");
       document.form1.uniq.value = XMLAddress1[0].childNodes[0].nodeValue;
@@ -120,45 +128,51 @@ function save_inv() {
         return;
     }
 
-    if (document.getElementById('vehicle_ref_Text').value == "") {
-        document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Vehicle Ref Not Enterd</span></div>";
-       $("#msg_box").hide().slideDown(400).delay(2000);
-            $("#msg_box").slideUp(400);
-        return false;
-    }
-    if (document.getElementById('department_Text').value == "") {
-        document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Department Not Enterd</span></div>";
-        $("#msg_box").hide().slideDown(400).delay(2000);
-            $("#msg_box").slideUp(400);
-        return false;
-    }
-    if (document.getElementById('vehicle_type_Text').value == "") {
-        document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Vehicle Type  Not Enterd</span></div>";
-        $("#msg_box").hide().slideDown(400).delay(2000);
-            $("#msg_box").slideUp(400);
-        return false;
-    }
-    if (document.getElementById('vehicle_number').value == "") {
-        document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Vehicle No Not Enterd</span></div>";
-        $("#msg_box").hide().slideDown(400).delay(2000);
-            $("#msg_box").slideUp(400);
-        return false;
-    }
-    if (document.getElementById('fuel_type_Text').value == "") {
-        document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Fuel Type Not Enterd</span></div>";
-        $("#msg_box").hide().slideDown(400).delay(2000);
-            $("#msg_box").slideUp(400);
-        return false;
-    }
+    // if (document.getElementById('vehicle_ref_Text').value == "") {
+    //     document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Vehicle Ref Not Enterd</span></div>";
+    //    $("#msg_box").hide().slideDown(400).delay(2000);
+    //         $("#msg_box").slideUp(400);
+    //     return false;
+    // }
+    // if (document.getElementById('department_Text').value == "") {
+    //     document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Department Not Enterd</span></div>";
+    //     $("#msg_box").hide().slideDown(400).delay(2000);
+    //         $("#msg_box").slideUp(400);
+    //     return false;
+    // }
+    // if (document.getElementById('vehicle_type_Text').value == "") {
+    //     document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Vehicle Type  Not Enterd</span></div>";
+    //     $("#msg_box").hide().slideDown(400).delay(2000);
+    //         $("#msg_box").slideUp(400);
+    //     return false;
+    // }
+    // if (document.getElementById('vehicle_number').value == "") {
+    //     document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Vehicle No Not Enterd</span></div>";
+    //     $("#msg_box").hide().slideDown(400).delay(2000);
+    //         $("#msg_box").slideUp(400);
+    //     return false;
+    // }
+    // if (document.getElementById('fuel_type_Text').value == "") {
+    //     document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Fuel Type Not Enterd</span></div>";
+    //     $("#msg_box").hide().slideDown(400).delay(2000);
+    //         $("#msg_box").slideUp(400);
+    //     return false;
+    // }
 
     var url =  "vehicle_master_data.php";
     url = url + "?Command=" + "save_item";
     
-    url = url + "&vehicle_ref=" + document.getElementById('vehicle_ref_Text').value;
-    url = url + "&department=" + document.getElementById('department_Text').value;
-    url = url + "&vehicle_number=" + document.getElementById('vehicle_number').value;
-    url = url + "&vehicle_type=" + document.getElementById('vehicle_type_Text').value;
-    url = url + "&fuel_type=" + document.getElementById('fuel_type_Text').value;
+    url = url + "&item_count=" + document.getElementById('item_count').value;
+    url = url + "&Vehicle_Ref=" + document.getElementById('Vehicle_Ref').value;
+    url = url + "&uniq=" + document.getElementById('uniq').value;
+    url = url + "&Vehicle_Number=" + document.getElementById('Vehicle_Number').value;
+    url = url + "&sdate=" + document.getElementById('sdate').value;
+    url = url + "&Seats=" + document.getElementById('Seats').value;
+    url = url + "&Fuel_Type=" + document.getElementById('Fuel_Type').value;
+    url = url + "&Year=" + document.getElementById('Year').value;
+    url = url + "&Brand=" + document.getElementById('Brand').value;
+    url = url + "&Model=" + document.getElementById('Model').value;
+    
   
     xmlHttp.onreadystatechange = salessaveresult;
     xmlHttp.open("GET", url, true);

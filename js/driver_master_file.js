@@ -39,15 +39,18 @@ function lost_focus(key) {
 
 function newent() {
     document.getElementById('uniq').value = "";
-    document.getElementById('driver_ref').value = "";
-    document.getElementById('driver_nic').value = "";
-    document.getElementById('driver_number').value = "";
-    document.getElementById('driver_name').value = "";
-   
-    
-    
-    
 
+    document.getElementById('driver_ref').value = "";
+    document.getElementById('driver_name').value = "";
+    
+    document.getElementById('Diver_Address_1').value = "";
+    document.getElementById('Diver_Address_2').value = "";
+    document.getElementById('Diver_Tel_1').value = "";
+    document.getElementById('Diver_Tel_2').value = "";
+    document.getElementById('Driving_License').value = "";
+    document.getElementById('NIC').value = "";
+    document.getElementById('uniq').value = "";
+    
     getdt();
 }
 
@@ -100,36 +103,25 @@ function save_inv()
         return false;
     }
 
-     if (document.getElementById('driver_nic').value == "") {
-        document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Driver NIC Not Enterd</span></div>";
-        $("#msg_box").hide().slideDown(400).delay(2000);
-            $("#msg_box").slideUp(400);
-        return false;
-    }
+  
 
-     if (document.getElementById('driver_number').value == "") {
-        document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Driver Name Not Enterd</span></div>";
-        $("#msg_box").hide().slideDown(400).delay(2000);
-            $("#msg_box").slideUp(400);
-        return false;
-    }
-
-     if (document.getElementById('driver_name').value == "") {
-        document.getElementById('msg_box').innerHTML = "<div class='alert alert-warning' role='alert'><span class='center-block'>Driver Number Not Enterd</span></div>";
-        $("#msg_box").hide().slideDown(400).delay(2000);
-            $("#msg_box").slideUp(400);
-        return false;
-    }
+    
+   
 
    
     var url = "driver_master_file_data.php";
     url = url + "?Command=" + "save_item";
 
     url = url + "&driver_ref=" + document.getElementById('driver_ref').value;
-    url = url + "&driver_nic=" + document.getElementById('driver_nic').value;
-    url = url + "&driver_number=" + document.getElementById('driver_number').value;
+    url = url + "&sdate=" + document.getElementById('sdate').value;
     url = url + "&driver_name=" + document.getElementById('driver_name').value;
-    //url = url + "&dob=" + document.getElementById('dob').value;
+    url = url + "&Diver_Address_1=" + document.getElementById('Diver_Address_1').value;
+    url = url + "&Diver_Address_2=" + document.getElementById('Diver_Address_2').value;
+    url = url + "&Diver_Tel_1=" + document.getElementById('Diver_Tel_1').value;
+    url = url + "&Diver_Tel_2=" + document.getElementById('Diver_Tel_2').value;
+    url = url + "&Driving_License=" + document.getElementById('Driving_License').value;
+    url = url + "&NIC=" + document.getElementById('NIC').value;
+    url = url + "&uniq=" + document.getElementById('uniq').value;
    
     
         

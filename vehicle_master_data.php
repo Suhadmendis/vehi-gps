@@ -41,8 +41,7 @@ if ($_GET["Command"] == "save_item") {
         $sql = "delete from vehicle_master1 where vehicle_ref = '" . $_GET['vehicle_ref'] . "'";
         $result = $conn->query($sql);
 
-        $sql1 = "Insert into vehicle_master1(vehicle_ref,department,vehicle_type,fuel_type,vehicle_number)values 
-    ('" .  $_GET['vehicle_ref'] . "','" . $_GET['department'] . "','" . $_GET['vehicle_type'] . "','" . $_GET['fuel_type'] ."','" . $_GET['vehicle_number'] ."') ";
+        $sql1 = "Insert into vehicle_master1(item_count, Vehicle_Ref, uniq, Vehicle_Number, sdate, Seats, Fuel_Type, Year, Brand, Model)values ('" . $_GET['item_count'] . "','" . $_GET['Vehicle_Ref'] . "','" . $_GET['uniq'] . "','" . $_GET['Vehicle_Number'] . "','" . $_GET['sdate'] . "','" . $_GET['Seats'] . "','" . $_GET['Fuel_Type'] . "','" . $_GET['Year'] . "','" . $_GET['Brand'] . "','" . $_GET['Model'] . "') ";
 
         $result = $conn->query($sql1);
       

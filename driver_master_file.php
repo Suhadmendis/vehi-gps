@@ -51,17 +51,7 @@
                         </div>
 
                     </div>
-                     
-                   
-                   <div class="form-group"></div>
-                    <div class="form-group-sm">
-                        <label class="col-sm-1" for="c_code">Driver NIC</label>
-                        <div class="col-sm-3">
-                            <input type="text" placeholder=""  id="driver_nic" class="form-control  input-sm">
-                        </div>
-
-                    </div>
-                   <div class="form-group"></div>
+                      <div class="form-group"></div>
                     <div class="form-group-sm">
                         <label class="col-sm-1" for="c_code">Driver Name</label>
                         <div class="col-sm-3">
@@ -69,12 +59,66 @@
                         </div>
 
                     </div>
+
+
+
                    
                    <div class="form-group"></div>
                     <div class="form-group-sm">
-                        <label class="col-sm-1" for="c_code">Driver Number</label>
+                        <label class="col-sm-1" for="c_code">In Date</label>
                         <div class="col-sm-3">
-                            <input type="text" placeholder=""  id="driver_number" class="form-control  input-sm">
+                            <input type="text" placeholder=""  id="sdate" class="form-control  input-sm">
+                        </div>
+
+                    </div>
+                  
+                   
+      
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Diver Address 1</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Diver Address 1"  id="Diver_Address_1" class="form-control  input-sm">
+                        </div>
+
+                    </div>
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Diver Address 2</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Diver Address 2"  id="Diver_Address_2" class="form-control  input-sm">
+                        </div>
+
+                    </div>
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Diver Tel 1</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Diver Tel 1"  id="Diver_Tel_1" class="form-control  input-sm">
+                        </div>
+
+                    </div>
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Diver Tel 2</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Diver Tel 2"  id="Diver_Tel_2" class="form-control  input-sm">
+                        </div>
+
+                    </div>
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Driving License</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Driving License"  id="Driving_License" class="form-control  input-sm">
+                        </div>
+
+                    </div>
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">NIC</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="NIC"  id="NIC" class="form-control  input-sm">
                         </div>
 
                     </div>
