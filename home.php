@@ -19,20 +19,124 @@ if (isset($_GET['url'])) {
 
 
     //Master File
-    
+    if ($_GET['url'] == "cleaner_master") {
+        include_once './cleaner_master_file.php';
+    }
+    if ($_GET['url'] == "vehicle_master") {
+        include_once './vehicle_master1.php';
+    }
     if ($_GET['url'] == "item_master") {
-        include_once './item_master.php';
+        include_once './item_master_file.php';
+    }
+    if ($_GET['url'] == "driver_master") {
+        include_once './driver_master_file.php';
+    }
+
+    
+    if ($_GET['url'] == "trip") {
+        include_once './trip.php';
+    }
+    if ($_GET['url'] == "expenses") {
+        include_once './vehicle_expenses.php';
+    }
+    if ($_GET['url'] == "genex") {
+        include_once './general_expenses.php';
+    }
+    if ($_GET['url'] == "fuel") {
+        include_once './fuel.php';
+    }
+
+
+    if ($_GET['url'] == "od") {
+        include_once './od.php';
+    }
+
+    if ($_GET['url'] == "loan") {
+        include_once './loan.php';
+    }
+     if ($_GET['url'] == "advance") {
+        include_once './advance.php';
+    }
+    if ($_GET['url'] == "deduction") {
+        include_once './deduction.php';
+    }
+
+    if ($_GET['url'] == "expenses_report") {
+        include_once './expenses_report.php';
+    }
+    if ($_GET['url'] == "expenses_report_gen") {
+        include_once './expenses_report_gen.php';
+    }
+
+    if ($_GET['url'] == "trips_history") {
+        include_once './trip_dtls_report.php';
+    }
+
+    if ($_GET['url'] == "tr_his") {
+        include_once './trip_dtls_report_2.php';
+    }
+
+
+  //fsdpiougfyiu
+    if ($_GET['url'] == "summery") {
+        include_once './summery.php';
+    }
+    if ($_GET['url'] == "driver") {
+        include_once './driver.php';
+    }
+    // if ($_GET['url'] == "cleaner_salary") {
+    //     include_once './cleaner_salary.php';
+    // }
+    // if ($_GET['url'] == "cleaner_salary") {
+    //    include_once './cleaner_trips.php';
+    // }
+//ojidhusfigyi
+
+    if ($_GET['url'] == "driver_salary_summary") {
+        include_once './driver_salary_summary.php';
+    }
+    if ($_GET['url'] == "driver_salary") {
+        include_once './driver_salary.php';
+    }
+
+   
+
+ 
+
+    if ($_GET['url'] == "fuel_usage") {
+        include_once './fuel_usage.php';
+    }
+
+    if ($_GET['url'] == "fau") {
+        include_once './list_all_fuel.php';
+    }
+
+    if ($_GET['url'] == "fs") {
+        include_once './fuel_usage_report.php';
+    }
+
+
+
+    if ($_GET['url'] == "sal_jan") {
+        include_once './driver_salary_jan.php';
     }
     
-    
-   
-    // Add
-   
+     if ($_GET['url'] == "cdsd") {
+        include_once './cleaner_driver_salary.php';
+    }
+
+    if ($_GET['url'] == "driverss") {
+        include_once './driver_salary_summary.php';
+    }
+
+    if ($_GET['url'] == "driver_cleaner_con") {
+        include_once './driver_cleaner_con.php';
+    }
+    if ($_GET['url'] == "lorry_summary") {
+        include_once './lorry_summary.php';
+    }
 
 
-    
-
-  
 
 
     if ($_GET['url'] == "new_user") {
