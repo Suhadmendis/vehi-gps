@@ -30,44 +30,77 @@
                 <br>
                 <div id="msg_box"  class="span12 text-center"  ></div>
                 <div class="col-md-12">
+
+
                    <div class="form-group"></div>
                     <div class="form-group-sm">
                         <label class="col-sm-1" for="c_code">Vehicle Ref</label>
                         <div class="col-sm-3">
-                            <input type="text" placeholder="Vehicle Ref"  id="vehicle_ref_Text" class="form-control  input-sm  " disabled="">
-                             <input type="text" placeholder="uniq"  id="uniq" class="form-control hidden input-sm"disabled="">
+                            <input type="text" placeholder="Vehicle Ref"  id="Vehicle_Ref" class="form-control  input-sm  " disabled="">
+                             <input type="text" placeholder="uniq"  id="uniq" class="form-control hidden input-sm" disabled="">
+                        </div>
+                    </div> 
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Vehicle Number</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Vehicle Number"  id="Vehicle_Number" class="form-control  input-sm  " >
+                            
+                        </div>
+                    </div> 
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">In Date</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="In Date"  id="sdate" class="form-control  input-sm  " >
+                            
+                        </div>
+                    </div> 
+                   
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Seats</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Seats"  id="Seats" class="form-control  input-sm  " >
+                            
+                        </div>
+                    </div> 
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Fuel Type</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Fuel Type"  id="Fuel_Type" class="form-control  input-sm  " >
+                            
+                        </div>
+                    </div> 
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Year</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Year"  id="Year" class="form-control  input-sm  " >
+                            
+                        </div>
+                    </div> 
+             
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Brand</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Brand"  id="Brand" class="form-control  input-sm  " >
+                            
+                        </div>
+                    </div> 
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Model</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Model"  id="Model" class="form-control  input-sm  " >
+                            
                         </div>
                     </div>                                 
-                   <div class="form-group"></div>
-                    <div class="form-group-sm">
-                        <label class="col-sm-1" for="c_code">Department</label>
-                        <div class="col-sm-3">
-                            <input type="text" placeholder="Department"  id="department_Text" class="form-control  input-sm">
-                        </div>
-                    </div>
-                               
-                   <div class="form-group"></div>
-                    <div class="form-group-sm">
-                        <label class="col-sm-1" for="c_code">Vehicle NO</label>
-                        <div class="col-sm-3">
-                            <input type="text" placeholder="Vehicle NO"  id="vehicle_number" class="form-control  input-sm">
-                        </div>
-                    </div>
-                               
-                 <div class="form-group"></div>
-                    <div class="form-group-sm">
-                        <label class="col-sm-1" for="c_code">Vehicle Type</label>
-                        <div class="col-sm-3">
-                            <input type="text" placeholder="Vehicle Type"  id="vehicle_type_Text" class="form-control  input-sm">
-                        </div>
-                    </div> 
-                 <div class="form-group"></div>
-                 <div class="form-group-sm">
-                     <label class="col-sm-1" for="c_code">Fuel Type</label>
-                     <div class="col-sm-3">
-                         <input type="text" placeholder="Fuel Type"  id="fuel_type_Text" class="form-control  input-sm">
-                     </div>
-                    </div> 
+                
+
+
                 </div>  
                 </div>
             </form>
