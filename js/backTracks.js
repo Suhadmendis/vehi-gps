@@ -10,6 +10,67 @@ var customIcons = {
 
 };
 
+
+
+
+function getdt() {
+
+    xmlHttp = GetXmlHttpObject();
+    if (xmlHttp == null) {
+        alert("Browser does not support HTTP Request");
+        return;
+    }
+
+    var url = "mapp_data.php";
+    url = url + "?Command=" + "backtrack";
+    url = url + "&ls=" + "new";
+
+    xmlHttp.onreadystatechange = assign_dt;
+    xmlHttp.open("GET", url, true);
+    xmlHttp.send(null);
+}
+var neighborhoods = [
+{lat: 52.50814  , lng:  13.45008  },
+{lat: 52.50813  , lng:  13.45009  },
+{lat: 52.50812  , lng:  13.4501 }
+
+
+
+  
+];
+
+function assign_dt() {
+    var XMLAddress1;
+
+    if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete")
+    {
+  
+         XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver");
+        // document.getElementById('uniq').value = XMLAddress1[0].childNodes[0].nodeValue;
+
+        console.log(XMLAddress1[0].childNodes[0].nodeValue); 
+        var obj = JSON.parse(XMLAddress1[0].childNodes[0].nodeValue);
+ var loc = [];
+  for (var i=0; i<XMLAddress1.length; i+=1) {
+         loc.push(JSON.parse(XMLAddress1[i].childNodes[0].nodeValue));
+
+          
+        }
+
+        console.log(loc);
+
+
+console.log(neighborhoods);
+
+
+        neighborhoods = loc;
+
+    }
+}
+
+
+
+
 function load1() {
 
     pointer();
@@ -23,7 +84,9 @@ function pointer() {
         mapTypeId: 'roadmap',
         gestureHandling: 'greedy'
     });
+
     var infoWindow = new google.maps.InfoWindow;    
+    
     var rep = document.getElementById("txt_name").value;
     var dtFrom = document.getElementById("txt_start").value;
     var dtTo = document.getElementById("txt_end").value;
