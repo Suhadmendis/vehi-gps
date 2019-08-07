@@ -29,7 +29,7 @@
                     <a onclick="toggleBounce();" class="btn btn-default btn-sm">
                         <span class="fa fa-user-plus"></span> &nbsp; toggleBounce
                     </a>
-
+                   
               
                 </div>
                 <br>
@@ -70,9 +70,9 @@
                         </div>
                     </div>
           
-                            <div id="map1" class="col-md-12" style="height: 600px;"></div>
-
-          
+           <a onclick="NewWindow('mapp.php?stname=Master', 'mywin', '800', '700', 'yes', 'center');" class="btn btn-info btn-sm">
+                        <span class="glyphicon glyphicon-search"></span> &nbsp; Generate
+                    </a>
                 </form>
 
 
@@ -120,4 +120,4 @@
 <!-- <script>newent();</script> -->
  
 <script src="js/backTracks.js"></script>
-<script>load1();</script>
+<script>getdt();</script>

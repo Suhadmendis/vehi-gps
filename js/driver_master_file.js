@@ -55,6 +55,8 @@ function newent() {
 }
 
 
+
+
 function getdt() {
 
     xmlHttp = GetXmlHttpObject();
