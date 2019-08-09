@@ -79,39 +79,24 @@ function passcusresult_quot()
 
         XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("stname");
         var stname = XMLAddress1[0].childNodes[0].nodeValue;
+        XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("obj");
+        var obj = JSON.parse(XMLAddress1[0].childNodes[0].nodeValue);
         if (stname === "Master") {
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver_ref");
-            opener.document.getElementById('driver_ref').value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver_nic");
-            opener.document.getElementById('driver_nic').value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver_number");
-            opener.document.getElementById('driver_number').value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver_name");
-            opener.document.getElementById('driver_name').value = XMLAddress1[0].childNodes[0].nodeValue;
-        }
-
-        if (stname === "trip") {
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver_ref");
-            opener.document.getElementById('driver_ref').value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver_name");
-            opener.document.getElementById('driver_name').value = XMLAddress1[0].childNodes[0].nodeValue;
-
-
-        }
+            
+            opener.document.form1.driver_ref.value = obj.driver_ref;
+            opener.document.form1.driver_name.value = obj.driver_name;
+            opener.document.form1.sdate.value = obj.sdate;
+            opener.document.form1.Diver_Address_1.value = obj.Diver_Add1;
+            opener.document.form1.Diver_Address_2.value = obj.Diver_Add2;
+            opener.document.form1.Diver_Tel_1.value = obj.Diver_Tel_1;
+            opener.document.form1.Diver_Tel_2.value = obj.Diver_Tel_2;
+            opener.document.form1.Driving_License.value = obj.Driving_License;
+            opener.document.form1.NIC.value = obj.NIC;
         
-         if (stname === "expen") {
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver_ref");
-            opener.document.getElementById('driver_ref').value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver_name");
-            opener.document.getElementById('driver_name').value = XMLAddress1[0].childNodes[0].nodeValue;
-
-
         }
+
+
+      
     self.close();
     }
     

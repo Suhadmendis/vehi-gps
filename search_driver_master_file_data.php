@@ -20,18 +20,13 @@ if ($_GET["Command"] == "pass_quot") {
 
     $sql = "select * from driver_master_file where driver_ref= '" . $cuscode . "'";
 
-    $sql = $conn->query($sql);
-    if ($row = $sql->fetch()) {
-
-        $ResponseXML .= "<driver_ref><![CDATA[" . $row['driver_ref'] . "]]></driver_ref>";
-        $ResponseXML .= "<driver_nic><![CDATA[" . $row['driver_nic'] . "]]></driver_nic>";
-        $ResponseXML .= "<driver_number><![CDATA[" . $row['driver_number'] . "]]></driver_number>";
-        $ResponseXML .= "<driver_name><![CDATA[" . $row['driver_name'] . "]]></driver_name>";
-        
-        
-       
-
-    }
+   $result = $conn->query($sql);
+    $row = $result->fetch();
+    
+   
+   
+    $ResponseXML .= "<obj><![CDATA[" . json_encode($row) . "]]></obj>";
+    
 
    $ResponseXML .= "<stname><![CDATA[" . $_GET['stname'] . "]]></stname>";
 

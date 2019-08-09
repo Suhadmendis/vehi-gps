@@ -21,19 +21,9 @@ if ($_GET["Command"] == "pass_quot") {
     $result = $conn->query($sql);
     $row = $result->fetch();
     
-    $vehicle_ref = $row['vehicle_ref'];
-    $department = $row['department'];
-    $vehicle_type = $row['vehicle_type'];
-    $vehicle_number = $row['vehicle_number'];
-    $fuel_type = $row['fuel_type'];
-    
-    $ResponseXML .= "<vehicle_ref><![CDATA[$vehicle_ref]]></vehicle_ref>";
-    $ResponseXML .= "<department><![CDATA[$department]]></department>";
-    $ResponseXML .= "<vehicle_number><![CDATA[$vehicle_number]]></vehicle_number>";
-    $ResponseXML .= "<vehicle_type><![CDATA[$vehicle_type]]></vehicle_type>";
-    $ResponseXML .= "<fuel_type><![CDATA[$fuel_type]]></fuel_type>";
    
-    $ResponseXML .= "<id><![CDATA[$vehicle_ref]]></id>";
+   
+    $ResponseXML .= "<obj><![CDATA[" . json_encode($row) . "]]></obj>";
     $ResponseXML .= "<stname><![CDATA[" . $_GET['stname'] . "]]></stname>";
     $ResponseXML .= "</new>";
    
