@@ -33,6 +33,10 @@ function lost_focus(key) {
 
 function load1() {
 
+
+    document.getElementById("drop").style.display = "none";
+
+
     getdt();
 
 }
@@ -52,12 +56,16 @@ function getdt() {
     url = url + "?Command=" + "backtrack";
     url = url + "&ls=" + "new";
 
-    // url = url + "&ST_DATE=" + opener.document.form1.txt_start.value;
-    // url = url + "&ED_DATE=" + opener.document.form1.txt_end.value;
-    // url = url + "&DR=" + opener.document.form1.txt_name.value;
-    // url = url + "&VH=" + opener.document.form1.txt_vehi.value;
-    
+    url = url + "&ST_DATE=" + opener.document.form1.txt_start.value;
+    url = url + "&ED_DATE=" + opener.document.form1.txt_end.value;
+    url = url + "&DR=" + opener.document.form1.txt_name.value;
+    url = url + "&VH=" + opener.document.form1.txt_vehi.value;
 
+    url = url + "&PK=" + opener.document.form1.pk_on.checked;
+    // url = url + "&D=" + opener.document.form1.dr.checked;
+    // url = url + "&V=" + opener.document.form1.vr.checked;
+    
+// alert(url);
     // if (opener.document.form1.pk_on.checked) {
     //   url = url + "&PARK=" + "Y";
     // }else{
@@ -106,11 +114,10 @@ function assign_dt() {
           
         }
 
-        console.log(loc);
+        // console.log(loc);
 
-
-console.log(neighborhoods);
-
+// console.log(neighborhoods);
+document.getElementById("drop").style.display = "flex";
 
         neighborhoods = loc;
 

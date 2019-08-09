@@ -60,7 +60,8 @@
                                 ?>
                             </div>
                             <div class="col-sm-3">
-                                <input type="checkbox" id="rd"  data-toggle="toggle">
+                                <input type="checkbox" id="rd"  >
+                                <!-- <input type="checkbox" id="rd"  data-toggle="toggle"> -->
                               
                             </div>
 
@@ -82,7 +83,8 @@
                                 ?>
                             </div>
                             <div class="col-sm-3">
-                                <input type="checkbox" id="rv" checked data-toggle="toggle">
+                                <input type="checkbox" id="rv" checked >
+                                <!-- <input type="checkbox" id="rv" checked data-toggle="toggle"> -->
                               
                             </div>
 
@@ -112,7 +114,8 @@
                            
                             <label class="col-sm-2 control-label" >With parking</label>
                             <div class="col-sm-3">
-                                <input type="checkbox" id="pk_on" checked data-toggle="toggle">
+                                <input type="checkbox" id="pk_on" checked >
+                                <!-- <input type="checkbox" id="pk_on" checked data-toggle="toggle"> -->
                               
                             </div>
                         </div>
@@ -169,4 +172,4 @@
 <!-- <script>newent();</script> -->
  
 <script src="js/backTracks.js"></script>
-<script>getdt();</script>
+<!-- <script>getdt();</script> -->

@@ -14,10 +14,25 @@ if ($_GET["Command"] == "backtrack") {
     $ResponseXML = "";
     $ResponseXML .= "<new>";
 
- $sql = "SELECT * FROM device_356307041502070 where speed <> '0000'";
+    $STD = $_GET['ST_DATE'];
+    $ETD = $_GET['ED_DATE'];
+    $DR = $_GET['DR'];
+    $VH = $_GET['VH'];
+
+    $PK = $_GET['PK'];
+    
+
+    if ($PK == "true") {
+         $sql = "SELECT lat,lon FROM device_356307041502070 where date_time_gps BETWEEN  '".$STD." 00:00:00". "' and '".$ETD." 00:00:00"."'";
+    }else{
+         $sql = "SELECT lat,lon FROM device_356307041502070 where date_time_gps BETWEEN  '".$STD." 00:00:00". "' and '".$ETD." 00:00:00"."' and speed <> '0000'";
+    }
+
+
     // $sql = "SELECT * FROM device_356307041502070";
       
-  
+  // echo $sql;
+ // $sql = "SELECT * FROM device_356307041502070 where speed <> '0000'  ";
 
   $myObj;
 // $myJSON = json_encode($myObj);
