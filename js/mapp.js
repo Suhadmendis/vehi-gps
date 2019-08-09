@@ -141,8 +141,24 @@ function drop() {
   // alert(opener.document.form1.txt_start.value);
   clearMarkers();
   for (var i = 0; i < neighborhoods.length; i++) {
+    console.log(i * 50);
     addMarkerWithTimeout(neighborhoods[i], i * 50);
   }
+
+
+  // var flightPlanCoordinates = [
+  //         {lat: 6.863225, lng: 79.877445},
+  //     {lat: 6.829223, lng: 79.872381},
+  //     {lat: 6.874134, lng: 79.880279}
+  //       ];
+  //       var flightPath = new google.maps.Polyline({
+  //         path: flightPlanCoordinates,
+  //         geodesic: true,
+  //         strokeColor: '#FF0000',
+  //         strokeOpacity: 1.0,
+  //         strokeWeight: 2
+  //       });
+  //        flightPath.setMap(map);
 }
 
 function addMarkerWithTimeout(position, timeout) {
@@ -154,6 +170,8 @@ function addMarkerWithTimeout(position, timeout) {
     }));
   }, timeout);
 }
+
+
 
 function clearMarkers() {
   for (var i = 0; i < markers.length; i++) {
