@@ -31,38 +31,6 @@ function lost_focus(key) {
     document.getElementById(key).style.backgroundColor = "#000000";
 
 }
-function GetXmlHttpObject() {
-    var xmlHttp = null;
-    try {
-        // Firefox, Opera 8.0+, Safari
-        xmlHttp = new XMLHttpRequest();
-    } catch (e) {
-        // Internet Explorer
-        try {
-            xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
-        } catch (e) {
-            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-    }
-    return xmlHttp;
-}
-
-function keyset(key, e) {
-
-    if (e.keyCode == 13) {
-        document.getElementById(key).focus();
-    }
-}
-
-function got_focus(key) {
-    document.getElementById(key).style.backgroundColor = "#000066";
-
-}
-
-function lost_focus(key) {
-    document.getElementById(key).style.backgroundColor = "#000000";
-
-}
 
 function newent() {
     xmlHttp = GetXmlHttpObject();
@@ -81,6 +49,7 @@ function newent() {
     document.getElementById('Year').value = "";
     document.getElementById('Brand').value = "";
     document.getElementById('Model').value = "";
+    document.getElementById('device').value = "";
    
 
 
@@ -172,6 +141,7 @@ function save_inv() {
     url = url + "&Year=" + document.getElementById('Year').value;
     url = url + "&Brand=" + document.getElementById('Brand').value;
     url = url + "&Model=" + document.getElementById('Model').value;
+    url = url + "&device=" + document.getElementById('device').value;
     
   
     xmlHttp.onreadystatechange = salessaveresult;

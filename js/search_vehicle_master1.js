@@ -73,6 +73,7 @@ function passcusresult_quot()
             opener.document.form1.Year.value = obj.Year;
             opener.document.form1.Brand.value = obj.Brand;
             opener.document.form1.Model.value = obj.Model;
+            opener.document.form1.device.value = obj.device;
         
         }
 

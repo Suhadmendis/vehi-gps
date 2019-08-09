@@ -47,21 +47,21 @@
                             <input type="text" placeholder="Vehicle Number"  id="Vehicle_Number" class="form-control  input-sm  " >
                             
                         </div>
-                    </div> 
-                     <div class="form-group"></div>
-                    <div class="form-group-sm">
                         <label class="col-sm-1" for="c_code">In Date</label>
                         <div class="col-sm-3">
-                            <input type="text" placeholder="In Date"  id="sdate" class="form-control  input-sm  " >
+                            <input type="date" placeholder="In Date"  id="sdate" class="form-control  input-sm  " >
                             
                         </div>
+
+
                     </div> 
+                   
                    
                      <div class="form-group"></div>
                     <div class="form-group-sm">
                         <label class="col-sm-1" for="c_code">Seats</label>
                         <div class="col-sm-3">
-                            <input type="text" placeholder="Seats"  id="Seats" class="form-control  input-sm  " >
+                            <input type="number" placeholder="Seats"  id="Seats" class="form-control  input-sm  " >
                             
                         </div>
                     </div> 
@@ -72,15 +72,13 @@
                             <input type="text" placeholder="Fuel Type"  id="Fuel_Type" class="form-control  input-sm  " >
                             
                         </div>
-                    </div> 
-                     <div class="form-group"></div>
-                    <div class="form-group-sm">
-                        <label class="col-sm-1" for="c_code">Year</label>
+                          <label class="col-sm-1" for="c_code">Year</label>
                         <div class="col-sm-3">
                             <input type="text" placeholder="Year"  id="Year" class="form-control  input-sm  " >
                             
                         </div>
                     </div> 
+                    
              
                      <div class="form-group"></div>
                     <div class="form-group-sm">
@@ -89,15 +87,23 @@
                             <input type="text" placeholder="Brand"  id="Brand" class="form-control  input-sm  " >
                             
                         </div>
-                    </div> 
-                     <div class="form-group"></div>
-                    <div class="form-group-sm">
-                        <label class="col-sm-1" for="c_code">Model</label>
+                         <label class="col-sm-1" for="c_code">Model</label>
                         <div class="col-sm-3">
                             <input type="text" placeholder="Model"  id="Model" class="form-control  input-sm  " >
                             
                         </div>
-                    </div>                                 
+                    </div> 
+
+                     <div class="form-group"></div>
+                    <div class="form-group-sm">
+                        <label class="col-sm-1" for="c_code">Device ID</label>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Device ID"  id="device" class="form-control  input-sm  " >
+                            
+                        </div>
+                      
+                    </div> 
+                                                 
                 
 
 
