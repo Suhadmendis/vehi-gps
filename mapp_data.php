@@ -14,7 +14,7 @@ if ($_GET["Command"] == "backtrack") {
     $ResponseXML = "";
     $ResponseXML .= "<new>";
 
- $sql = "SELECT * FROM device_356307041502070 where speed <> '0000'  ";
+ $sql = "SELECT * FROM device_356307041502070 where speed <> '0000'";
     // $sql = "SELECT * FROM device_356307041502070";
       
   

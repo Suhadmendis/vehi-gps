@@ -48,7 +48,7 @@ function assign_dt() {
          XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver");
         // document.getElementById('uniq').value = XMLAddress1[0].childNodes[0].nodeValue;
 
-        console.log(XMLAddress1[0].childNodes[0].nodeValue); 
+        // console.log(XMLAddress1[0].childNodes[0].nodeValue); 
         var obj = JSON.parse(XMLAddress1[0].childNodes[0].nodeValue);
  var loc = [];
   for (var i=0; i<XMLAddress1.length; i+=1) {

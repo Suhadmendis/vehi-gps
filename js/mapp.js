@@ -52,6 +52,28 @@ function getdt() {
     url = url + "?Command=" + "backtrack";
     url = url + "&ls=" + "new";
 
+    // url = url + "&ST_DATE=" + opener.document.form1.txt_start.value;
+    // url = url + "&ED_DATE=" + opener.document.form1.txt_end.value;
+    // url = url + "&DR=" + opener.document.form1.txt_name.value;
+    // url = url + "&VH=" + opener.document.form1.txt_vehi.value;
+    
+
+    // if (opener.document.form1.pk_on.checked) {
+    //   url = url + "&PARK=" + "Y";
+    // }else{
+    //   url = url + "&PARK=" + "N";
+    // }
+    // if (opener.document.form1.dr.checked) {
+    //   url = url + "&D=" + "Y";
+    // }else{
+    //   url = url + "&D=" + "N";
+    // }
+    // if (opener.document.form1.vr.checked) {
+    //   url = url + "&V=" + "Y";
+    // }else{
+    //   url = url + "&V=" + "N";
+    // }
+
     xmlHttp.onreadystatechange = assign_dt;
     xmlHttp.open("GET", url, true);
     xmlHttp.send(null);
@@ -75,7 +97,7 @@ function assign_dt() {
          XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver");
         // document.getElementById('uniq').value = XMLAddress1[0].childNodes[0].nodeValue;
 
-        console.log(XMLAddress1[0].childNodes[0].nodeValue); 
+        // console.log(XMLAddress1[0].childNodes[0].nodeValue); 
         var obj = JSON.parse(XMLAddress1[0].childNodes[0].nodeValue);
  var loc = [];
   for (var i=0; i<XMLAddress1.length; i+=1) {
@@ -103,11 +125,13 @@ var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
-    center: {lat: 52.50814, lng: 13.45008}
+    center: {lat: 6.908690, lng: 79.916984}
   });
 }
 
 function drop() {
+
+  // alert(opener.document.form1.txt_start.value);
   clearMarkers();
   for (var i = 0; i < neighborhoods.length; i++) {
     addMarkerWithTimeout(neighborhoods[i], i * 50);
@@ -117,9 +141,9 @@ function drop() {
 function addMarkerWithTimeout(position, timeout) {
   window.setTimeout(function() {
     markers.push(new google.maps.Marker({
-position: position,
-map: map,
-animation: google.maps.Animation
+    position: position,
+    map: map,
+    animation: google.maps.Animation
     }));
   }, timeout);
 }
@@ -135,12 +159,10 @@ function clearMarkers() {
 
 function pointer() {
     
- 
-    
     var rep = document.getElementById("txt_name").value;
     var dtFrom = document.getElementById("txt_start").value;
     var dtTo = document.getElementById("txt_end").value;
-
-   
 }
+
+
 
