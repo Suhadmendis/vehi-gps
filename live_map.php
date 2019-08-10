@@ -1,123 +1,85 @@
-<script src="http://maps.google.com/maps/api/js?key=AIzaSyClBKRU9iKfSLnXVTvdv11RvKwpCrfdoQI&" type="text/javascript"></script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Clustering</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      function initMap() {
 
-<section class="content">
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: {lat: 6.863225, lng: 79.877445}
+        });
 
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title"><b>Live Map</b></h3>
-        </div>
-        <form name= "form1" role="form" class="form-horizontal">
-            <div class="box-body">
-                <input type="hidden" id="tmpno" class="form-control">
-
-                <input type="hidden" id="item_count" class="form-control">
-
-                <div class="form-group-sm">
-                    
-                      <a onclick="load1();" class="btn btn-default btn-sm">
-                        <span class="fa fa-user-plus"></span> &nbsp; Reload
-                    </a>
-
-
-                    <a onclick="initMap();" class="btn btn-default btn-sm">
-                        <span class="fa fa-user-plus"></span> &nbsp; initMap
-                    </a>
-    
-                    <a onclick="toggleBounce();" class="btn btn-default btn-sm">
-                        <span class="fa fa-user-plus"></span> &nbsp; toggleBounce
-                    </a>
-
-              
-                </div>
-                <br>
-                <div id="msg_box"  class="span12 text-center"></div>
-                <div class="col-md-12">
+        var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
 
 
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-                   
-                <form role="form" class="form-horizontal">
-                   
-                    <div class="col-md-12" >
-                        <div class="form-group">
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location
+           
+          });
+        });
 
-                            <label class="col-sm-1 control-label" > City List</label>
-                            <div class="col-sm-3 form-group-sm">
-                                <?php
-                                include './connection_sql.php';
-                                echo"<select id = \"txt_name\"  class =\"form-control input-sm\">";
-                                $sql = "select * from driver group by dfName";
-                                foreach ($conn->query($sql) as $row) {
-                                    echo "<option >" . $row["dfName"] . "</option>";
-                                }
-                                echo"</select>";
-                                ?>
-                            </div>
-
-
-                            <label class="col-sm-1 control-label">Start Date</label>
-                            <div class="col-sm-3">
-                                <input type="date" placeholder="Start Date" id="txt_start" value="<?php echo date('Y-m-d',strtotime('-2 year')); ?>" class="form-control input-sm">
-                            </div>
-
-                            <label class="col-sm-1 control-label" >End Date</label>
-                            <div class="col-sm-3">
-                                <input type="date" placeholder="End Date" id="txt_end" value="<?php echo date('Y-m-d'); ?>" class="form-control input-sm">
-                            </div>  
-                        </div>
-                    </div>
-          
-                            <div id="map1" class="col-md-12" style="height: 600px;"></div>
-
-          
-                </form>
-
-
-
-
-             <!--      <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#content1">All Vehicles</a></li>
-                    <li><a data-toggle="tab" href="#content2">Reports</a></li>
-                    <li><a data-toggle="tab" href="#content3">BackTrack</a></li>
-                    <li><a data-toggle="tab" href="#content4">Drivers</a></li>
-                </ul>
-
-                <div class="tab-content">
-                    <div id="content1" class="tab-pane fade in active">
-                      
-                        <?php
-                      //  include './ba.php';
-                        ?>
-                    </div>
-                    <div id="content2" class="tab-pane fade">
-                       <?php
-//include './ba_1.php';
-                        ?>
-                    </div>
-                    <div id="content3" class="tab-pane fade">
-                       
-                    </div>
-                    <div id="content4" class="tab-pane fade">
-                        <?php
-                      //  include './ba_3.php';
-                        ?>
-                    </div>
-                </div> -->
-
-                </div>  
-                </div>
-            </form>
-          </div>
-    </div>
-
-</section>
-<!-- <script src="js/vehicle_master1.js"></script> -->
-
-
-<!-- <script>newent();</script> -->
- 
-<script src="js/backTracks.js"></script>
-<script>load1();</script>
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+      {lat: 6.863225, lng: 79.877445},
+      {lat: 6.829223, lng: 79.872381},
+      {lat: 6.874134, lng: 79.880279},
+      {lat: 6.883849, lng: 79.894444},
+      {lat: 6.830160, lng: 79.892980},
+      {lat: 6.812348, lng: 79.881136},
+      {lat: 6.860413, lng: 79.894783},
+      {lat: 6.866208, lng: 79.911434},
+      {lat: 6.870778, lng: 79.910973},
+      {lat: 6.873929, lng: 79.902709},
+      {lat: 6.871852, lng: 79.893600},
+      {lat: 7.174008, lng: 79.880537},
+      {lat: 7.181898, lng: 79.884456},
+      {lat: 7.169569, lng: 79.874822},
+      {lat: 7.163378, lng: 79.981222},
+      {lat: 7.162360, lng: 80.022424},
+      {lat: 7.122311, lng: 80.065825},
+      {lat: 6.599187, lng: 80.014389},
+      {lat: 6.255079, lng: 80.151046},
+      {lat: 6.180883, lng: 80.194276},
+      {lat: 6.870714, lng: 79.877443}
+       
+      ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClBKRU9iKfSLnXVTvdv11RvKwpCrfdoQI&callback=initMap">
+    </script>
+  </body>
+</html>

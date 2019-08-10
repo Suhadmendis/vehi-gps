@@ -106,7 +106,7 @@ function get_title($url) {
 
             <header class="main-header">
                 <!-- Logo -->
-                <a style="font-size: 12px;" href="home.php" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels --> <span class="logo-mini"><b></b></span> <!-- logo for regular state and mobile devices --> <span class="logo-lg"><b>AMT</b></span> AMT</a>
+                <a style="font-size: 12px;" href="home.php" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels --> <span class="logo-mini"><b></b></span> <!-- logo for regular state and mobile devices --> <span class="logo-lg"><b>Kangaroo Cabs</b></span> KC</a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -120,6 +120,13 @@ function get_title($url) {
                             <!-- Tasks: style can be found in dropdown.less -->
 
                             <!-- User Account: style can be found in dropdown.less -->
+                            <li class="dropdown user user-menu">
+
+                               <a  onclick="NewWindow('live_map.php?stname=Master', 'mywin', '800', '700', 'yes', 'center');" >
+                        <span class="glyphicon glyphicon-search"></span> &nbsp; Live Map
+                    </a>
+                             
+                            </li>
                             <li class="dropdown user user-menu">
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">

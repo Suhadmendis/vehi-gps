@@ -61,64 +61,23 @@ function passcusresult_quot()
 
         XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("stname");
         var stname = XMLAddress1[0].childNodes[0].nodeValue;
+        XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("obj");
+        var obj = JSON.parse(XMLAddress1[0].childNodes[0].nodeValue);
         if (stname === "Master") {
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_ref");
-            opener.document.form1.vehicle_ref_Text.value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("department");
-            opener.document.form1.department_Text.value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_number");
-            opener.document.form1.vehicle_number.value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_type");
-            opener.document.form1.vehicle_type_Text.value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("fuel_type");
-            opener.document.form1.fuel_type_Text.value = XMLAddress1[0].childNodes[0].nodeValue;
-        }
-
-        if (stname === "trip") {
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_ref");
-            opener.document.form1.vehicle_ref.value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_number");
-            opener.document.form1.vehicle_number.value = XMLAddress1[0].childNodes[0].nodeValue;
-
-
-
-        }
-        if (stname === "expen") {
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_ref");
-            opener.document.form1.vehicle_ref.value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_number");
-            opener.document.form1.vehicle_number.value = XMLAddress1[0].childNodes[0].nodeValue;
-
-
-
-        }
-        if (stname === "fuel") {
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_ref");
-            opener.document.form1.vehicle_ref.value = XMLAddress1[0].childNodes[0].nodeValue;
-
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_number");
-            opener.document.form1.vehicle_number.value = XMLAddress1[0].childNodes[0].nodeValue;
-          
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("fuel_type");
-            opener.document.form1.fuel_type_Text.value = XMLAddress1[0].childNodes[0].nodeValue;
             
+            opener.document.form1.Vehicle_Ref.value = obj.Vehicle_Ref;
+            opener.document.form1.Vehicle_Number.value = obj.Vehicle_Number;
+            opener.document.form1.sdate.value = obj.sdate;
+            opener.document.form1.Seats.value = obj.Seats;
+            opener.document.form1.Fuel_Type.value = obj.Fuel_Type;
+            opener.document.form1.Year.value = obj.Year;
+            opener.document.form1.Brand.value = obj.Brand;
+            opener.document.form1.Model.value = obj.Model;
+            opener.document.form1.device.value = obj.device;
+        
         }
-        if (stname === "code") {
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_ref");
-            opener.document.form1.vehicle_ref.value = XMLAddress1[0].childNodes[0].nodeValue;
 
-            XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("vehicle_number");
-            opener.document.form1.vehicle_number.value = XMLAddress1[0].childNodes[0].nodeValue;
-          
-          
-            
-        }
+      
         self.close();
     }
 

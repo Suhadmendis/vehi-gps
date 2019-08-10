@@ -33,6 +33,10 @@ function lost_focus(key) {
 
 function load1() {
 
+
+    document.getElementById("drop").style.display = "none";
+
+
     getdt();
 
 }
@@ -51,6 +55,32 @@ function getdt() {
     var url = "mapp_data.php";
     url = url + "?Command=" + "backtrack";
     url = url + "&ls=" + "new";
+
+    url = url + "&ST_DATE=" + opener.document.form1.txt_start.value;
+    url = url + "&ED_DATE=" + opener.document.form1.txt_end.value;
+    url = url + "&DR=" + opener.document.form1.txt_name.value;
+    url = url + "&VH=" + opener.document.form1.txt_vehi.value;
+
+    url = url + "&PK=" + opener.document.form1.pk_on.checked;
+    // url = url + "&D=" + opener.document.form1.dr.checked;
+    // url = url + "&V=" + opener.document.form1.vr.checked;
+    
+// alert(url);
+    // if (opener.document.form1.pk_on.checked) {
+    //   url = url + "&PARK=" + "Y";
+    // }else{
+    //   url = url + "&PARK=" + "N";
+    // }
+    // if (opener.document.form1.dr.checked) {
+    //   url = url + "&D=" + "Y";
+    // }else{
+    //   url = url + "&D=" + "N";
+    // }
+    // if (opener.document.form1.vr.checked) {
+    //   url = url + "&V=" + "Y";
+    // }else{
+    //   url = url + "&V=" + "N";
+    // }
 
     xmlHttp.onreadystatechange = assign_dt;
     xmlHttp.open("GET", url, true);
@@ -75,7 +105,7 @@ function assign_dt() {
          XMLAddress1 = xmlHttp.responseXML.getElementsByTagName("driver");
         // document.getElementById('uniq').value = XMLAddress1[0].childNodes[0].nodeValue;
 
-        console.log(XMLAddress1[0].childNodes[0].nodeValue); 
+        // console.log(XMLAddress1[0].childNodes[0].nodeValue); 
         var obj = JSON.parse(XMLAddress1[0].childNodes[0].nodeValue);
  var loc = [];
   for (var i=0; i<XMLAddress1.length; i+=1) {
@@ -84,11 +114,10 @@ function assign_dt() {
           
         }
 
-        console.log(loc);
+        // console.log(loc);
 
-
-console.log(neighborhoods);
-
+// console.log(neighborhoods);
+document.getElementById("drop").style.display = "flex";
 
         neighborhoods = loc;
 
@@ -103,26 +132,46 @@ var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
-    center: {lat: 52.50814, lng: 13.45008}
+    center: {lat: 6.908690, lng: 79.916984}
   });
 }
 
 function drop() {
+
+  // alert(opener.document.form1.txt_start.value);
   clearMarkers();
   for (var i = 0; i < neighborhoods.length; i++) {
+    console.log(i * 50);
     addMarkerWithTimeout(neighborhoods[i], i * 50);
   }
+
+
+  // var flightPlanCoordinates = [
+  //         {lat: 6.863225, lng: 79.877445},
+  //     {lat: 6.829223, lng: 79.872381},
+  //     {lat: 6.874134, lng: 79.880279}
+  //       ];
+  //       var flightPath = new google.maps.Polyline({
+  //         path: flightPlanCoordinates,
+  //         geodesic: true,
+  //         strokeColor: '#FF0000',
+  //         strokeOpacity: 1.0,
+  //         strokeWeight: 2
+  //       });
+  //        flightPath.setMap(map);
 }
 
 function addMarkerWithTimeout(position, timeout) {
   window.setTimeout(function() {
     markers.push(new google.maps.Marker({
-position: position,
-map: map,
-animation: google.maps.Animation
+    position: position,
+    map: map,
+    animation: google.maps.Animation
     }));
   }, timeout);
 }
+
+
 
 function clearMarkers() {
   for (var i = 0; i < markers.length; i++) {
@@ -135,12 +184,10 @@ function clearMarkers() {
 
 function pointer() {
     
- 
-    
     var rep = document.getElementById("txt_name").value;
     var dtFrom = document.getElementById("txt_start").value;
     var dtTo = document.getElementById("txt_end").value;
-
-   
 }
+
+
 

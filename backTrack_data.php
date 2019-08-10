@@ -15,7 +15,7 @@ function parseToXML($htmlStr) {
 }
 
 // Select all the rows in the markers table
-$sql = "SELECT * FROM driver where dfName='" . $_GET["rep"] . "' and date_time_gps between '" . $_GET["dtFrom"] . "' and '" . $_GET["dtTo"] . "' order by date_time_gps limit 2";
+$sql = "SELECT * FROM driver order by date_time_gps limit 2";
 // echo $sql;
 header("Content-type: text/xml");
 echo '<markers>';

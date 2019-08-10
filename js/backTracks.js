@@ -25,6 +25,8 @@ function getdt() {
     url = url + "?Command=" + "backtrack";
     url = url + "&ls=" + "new";
 
+    
+
     xmlHttp.onreadystatechange = assign_dt;
     xmlHttp.open("GET", url, true);
     xmlHttp.send(null);
