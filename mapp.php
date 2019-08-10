@@ -34,7 +34,7 @@
     </style>
   </head>
   <body>
-    <h1>fudsi</h1>
+    <!-- <h1>fudsi</h1> -->
     <div id="floating-panel">
       <button id="drop" onclick="drop()">Go !!</button>
     </div>
