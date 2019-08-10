@@ -55,7 +55,11 @@ if (isset($_GET['url'])) {
     if ($_GET['url'] == "test") {
         include_once './test.php';
     }
-     if ($_GET['url'] == "backtrack") {
+
+    if ($_GET['url'] == "d_allo") {
+        include_once './d_allocation.php';
+    }
+    if ($_GET['url'] == "backtrack") {
         include_once './backtrack.php';
     }
     if ($_GET['url'] == "vehicle_master") {
