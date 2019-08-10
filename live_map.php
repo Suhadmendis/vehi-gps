@@ -42,7 +42,8 @@
         // The map() method here has nothing to do with the Google Maps API.
         var markers = locations.map(function(location, i) {
           return new google.maps.Marker({
-            position: location
+            position: location,
+            icon: "cap.png"
            
           });
         });

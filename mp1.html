@@ -1,9 +1,9 @@
-<!DOCTYP<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Drawing Tools</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <title>Simple Markers</title>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -17,48 +17,40 @@
         padding: 0;
       }
     </style>
-
-
   </head>
   <body>
+    <h2>dsf</h2>
     <div id="map"></div>
     <script>
-      // This example requires the Drawing library. Include the libraries=drawing
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=drawing">
 
       function initMap() {
+        var myLatLng = {lat: -25.363, lng: 131.044};
+
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          zoom: 10,
+          center: myLatLng
         });
 
-var drawingManager = new google.maps.drawing.DrawingManager();
-drawingManager.setMap(map);
-        var drawingManager = new google.maps.drawing.DrawingManager({
-          drawingMode: google.maps.drawing.OverlayType.MARKER,
-          drawingControl: true,
-          drawingControlOptions: {
-            position: google.maps.ControlPosition.TOP_CENTER,
-            drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
-          },
-          markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
-          circleOptions: {
-            fillColor: '#ffff00',
-            fillOpacity: 1,
-            strokeWeight: 5,
-            clickable: false,
-            editable: true,
-            zIndex: 1
-          }
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!',
+          icon :{ 
+                    url: 'cap.png',
+                    scale: 8,
+                    rotation: 80, 
+                    }
         });
-        drawingManager.setMap(map);
+
+        console.log(marker);
+
       }
     </script>
 
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClBKRU9iKfSLnXVTvdv11RvKwpCrfdoQI&callback=initMap">
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClBKRU9iKfSLnXVTvdv11RvKwpCrfdoQI&libraries=drawing">
+   
   </body>
 </html>
+
