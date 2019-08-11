@@ -55,6 +55,12 @@ if (isset($_GET['url'])) {
     if ($_GET['url'] == "live_map") {
         include_once './live_map.php';
     }
+    if ($_GET['url'] == "find") {
+        include_once './find.php';
+    }
+     if ($_GET['url'] == "driver_con") {
+        include_once './driver_con.php';
+    }
     if ($_GET['url'] == "test") {
         include_once './test.php';
     }
