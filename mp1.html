@@ -1,9 +1,9 @@
-<!DOCTYP<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Drawing Tools</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <title>Simple Markers</title>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -16,49 +16,76 @@
         margin: 0;
         padding: 0;
       }
+      #mapCanvas{
+            width: 100%;
+            height: 400px;
+        }
     </style>
-
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClBKRU9iKfSLnXVTvdv11RvKwpCrfdoQI"></script>
   </head>
   <body>
-    <div id="map"></div>
-    <script>
-      // This example requires the Drawing library. Include the libraries=drawing
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=drawing">
+    <h2>dsf</h2>
+    <div id="mapCanvas"></div>
+   <script>
+var position = [40.748774, -73.985763];
 
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
+function initialize() { 
+    var latlng = new google.maps.LatLng(position[0], position[1]);
+    var myOptions = {
+        zoom: 16,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
 
-var drawingManager = new google.maps.drawing.DrawingManager();
-drawingManager.setMap(map);
-        var drawingManager = new google.maps.drawing.DrawingManager({
-          drawingMode: google.maps.drawing.OverlayType.MARKER,
-          drawingControl: true,
-          drawingControlOptions: {
-            position: google.maps.ControlPosition.TOP_CENTER,
-            drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
-          },
-          markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
-          circleOptions: {
-            fillColor: '#ffff00',
-            fillOpacity: 1,
-            strokeWeight: 5,
-            clickable: false,
-            editable: true,
-            zIndex: 1
-          }
-        });
-        drawingManager.setMap(map);
-      }
-    </script>
+    marker = new google.maps.Marker({
+        position: latlng,
+        map: map,
+        title: "Latitude:"+position[0]+" | Longitude:"+position[1]
+    });
+
+    google.maps.event.addListener(map, 'click', function(event) {
+        var result = [event.latLng.lat(), event.latLng.lng()];
+        transition(result);
+    });
+}
+
+//Load google map
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+var numDeltas = 500;
+var delay = 20; //milliseconds
+var i = 0;
+var deltaLat;
+var deltaLng;
+
+function transition(result){
+  console.log(numDeltas);
+    i = 0;
+    deltaLat = (result[0] - position[0])/numDeltas;
+    deltaLng = (result[1] - position[1])/numDeltas;
+    moveMarker();
+}
+
+function moveMarker(){
+   console.log(position[0] + " : " + deltaLat);
+    position[0] += deltaLat;
+    position[1] += deltaLng;
+    var latlng = new google.maps.LatLng(position[0], position[1]);
+    marker.setTitle("Latitude:"+position[0]+" | Longitude:"+position[1]);
+    marker.setPosition(latlng);
+    if(i!=numDeltas){
+        i++;
+        setTimeout(moveMarker, delay);
+    }
+}
+</script>
 
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClBKRU9iKfSLnXVTvdv11RvKwpCrfdoQI&callback=initMap">
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClBKRU9iKfSLnXVTvdv11RvKwpCrfdoQI&libraries=drawing">
+   
   </body>
 </html>
+

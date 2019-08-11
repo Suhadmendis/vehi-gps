@@ -41,8 +41,11 @@ if (isset($_GET['url'])) {
     if ($_GET['url'] == "vehicle_master") {
         include_once './vehicle_master1.php';
     }
-    if ($_GET['url'] == "item_master") {
-        include_once './item_master_file.php';
+    if ($_GET['url'] == "model") {
+        include_once './model_master.php';
+    }
+    if ($_GET['url'] == "brand") {
+        include_once './brand_master.php';
     }
     if ($_GET['url'] == "driver_master") {
         include_once './driver_master_file.php';
